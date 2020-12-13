@@ -1,0 +1,348 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Part I Fake Code · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="base_code.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="fake_code.html">
+            
+                <a href="fake_code.html">
+            
+                    
+                    Part I Fake Code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="base_code.html">
+            
+                <a href="base_code.html">
+            
+                    
+                    Part II base Code
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Part I Fake Code</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5355;&#x6B65;&#x8FD0;&#x52A8;&#x4E3B;&#x4EE3;&#x7801;main&#x5165;&#x53E3;&#xFF1A;">&#x5355;&#x6B65;&#x8FD0;&#x52A8;&#x4E3B;&#x4EE3;&#x7801;main()&#x5165;&#x53E3;&#xFF1A;</h1>
+<h2 id="input">Input</h2>
+<p><code>wall_foot_step[N][3]</code> -&gt; &#x722C;&#x58C1;&#x7684;&#x6BCF;&#x4E00;&#x6B65;&#x7684;&#x843D;&#x811A;&#x70B9;&#x4F4D;&#x7F6E;[N : x*y*z, unit: m]  <br>
+<code>step_option[N]</code>  -&gt;  &#x722C;&#x58C1;&#x6BCF;&#x4E00;&#x6B65;&#x7684;&#x60C5;&#x51B5;(1&#x8868;&#x793A;&#x58C1;&#x9762;&#x5185;&#x90E8;&#xFF0C;2&#x8868;&#x793A;&#x8DE8;&#x58C1;&#x9762;)[N : 1/2]<br></p>
+<h2 id="output">Output</h2>
+<p><code>base_coordinates[N][3]</code> -&gt; &#x57FA;&#x5750;&#x6807; (N: x*y*z)<br>
+<code>base_coordinate_system[N][3][3]</code> -&gt; &#x57FA;&#x5750;&#x6807;&#x7CFB; (N: 3*3, Rx-Ry-Rz) <br>
+<code>joint_angle[N][5]</code> -&gt; &#x5173;&#x8282;&#x65CB;&#x8F6C;&#x89D2;&#x5EA6;(&#x7EDD;&#x5BF9;&#x89D2;&#x5EA6;, unit: degree) (N: 1*5) <br></p>
+<h1 id="&#x9884;&#x5904;&#x7406;&#x9636;&#x6BB5;">&#x9884;&#x5904;&#x7406;&#x9636;&#x6BB5;</h1>
+<h2 id="1&#x3001;&#x58C1;&#x9762;&#x6536;&#x7F29;&#x5904;&#x7406;&#x5BF9;&#x58C1;&#x9762;&#x8FDB;&#x884C;&#x5438;&#x9644;&#x672B;&#x7AEF;&#x534A;&#x5F84;&#x6536;&#x7F29;">1&#x3001;&#x58C1;&#x9762;&#x6536;&#x7F29;&#x5904;&#x7406;(&#x5BF9;&#x58C1;&#x9762;&#x8FDB;&#x884C;&#x5438;&#x9644;&#x672B;&#x7AEF;&#x534A;&#x5F84;&#x6536;&#x7F29;)</h2>
+<h3 id="input">Input</h3>
+<p><code>surfaces[N][n][3]</code> -&gt;  &#x6BCF;&#x4E2A;&#x58C1;&#x9762;&#x7684;&#x9876;&#x70B9;[N: n * 3, N&#x4E2A;&#x58C1;&#x9762;&#xFF0C;&#x6BCF;&#x4E2A;&#x58C1;&#x9762;n&#x4E2A;&#x9876;&#x70B9;&#xFF0C;&#x6BCF;&#x4E2A;&#x9876;&#x70B9;&#x4E09;&#x4E2A;&#x5750;&#x6807;&#x5206;&#x91CF;, unit: m] <br></p>
+<p><code>r</code> -&gt; &#x58C1;&#x9762;&#x6536;&#x7F29;&#x534A;&#x5F84;(&#x5438;&#x76D8;&#x5706;&#x5316;&#x540E;&#x7684;&#x534A;&#x5F84;)[unit: m] <br></p>
+<h3 id="output">Output</h3>
+<p><code>shrink_surface[N][3][3]</code> -&gt; &#x6BCF;&#x4E2A;&#x58C1;&#x9762;&#x6536;&#x7F29;&#x540E;&#x7684;&#x9876;&#x70B9;[N: n * 3, N&#x4E2A;&#x58C1;&#x9762;&#xFF0C;&#x6BCF;&#x4E2A;&#x58C1;&#x9762;n&#x4E2A;&#x9876;&#x70B9;&#xFF0C;&#x6BCF;&#x4E2A;&#x9876;&#x70B9;&#x4E09;&#x4E2A;&#x5750;&#x6807;&#x5206;&#x91CF;, unit: m] <br></p>
+<h3 id="process">process</h3>
+<pre><code class="lang-cpp"><span class="hljs-keyword">for</span> each surfaces:
+   <span class="hljs-keyword">for</span> each point: 
+       ang_cos &lt;- dot(vn, v2)   <span class="hljs-comment">// vn, v1&#x4E3A;&#x58C1;&#x9762;&#x7684;&#x5411;&#x91CF;&#x8FB9;</span>
+       ang_sin &lt;- <span class="hljs-built_in">sqrt</span>(<span class="hljs-number">1</span> - ang_cos^<span class="hljs-number">2</span>)  
+       l &lt;- r/ang_sin  <span class="hljs-comment">// l&#x4E3A;&#x6BCF;&#x4E00;&#x9876;&#x70B9;&#x6240;&#x9700;&#x8981;&#x4F38;&#x5C55;&#x7684;&#x8DDD;&#x79BB;</span>
+       shrink_point &lt;- former_point + vn*l + v2*l
+</code></pre>
+<h2 id="2&#x3001;&#x6BCF;&#x4E2A;&#x5355;&#x6B65;&#x8FD0;&#x52A8;&#x4E09;&#x4E2A;&#x70B9;&#x6240;&#x5728;&#x7684;&#x9762;&#x4EE5;&#x6B64;&#x5224;&#x65AD;&#x8FD9;&#x6B65;&#x8FD0;&#x52A8;&#x662F;&#x5728;&#x54EA;&#x4E2A;&#x58C1;&#x9762;&#x8FD0;&#x52A8;&#xFF0C;&#x5230;&#x8FBE;&#x54EA;&#x4E2A;&#x58C1;&#x9762;">2&#x3001;&#x6BCF;&#x4E2A;&#x5355;&#x6B65;&#x8FD0;&#x52A8;&#x4E09;&#x4E2A;&#x70B9;&#x6240;&#x5728;&#x7684;&#x9762;(&#x4EE5;&#x6B64;&#x5224;&#x65AD;&#x8FD9;&#x6B65;&#x8FD0;&#x52A8;&#x662F;&#x5728;&#x54EA;&#x4E2A;&#x58C1;&#x9762;&#x8FD0;&#x52A8;&#xFF0C;&#x5230;&#x8FBE;&#x54EA;&#x4E2A;&#x58C1;&#x9762;)</h2>
+<h3 id="input">Input</h3>
+<p><code>wall_planning_points[N][3] == wall_foot_step</code>  -&gt; &#x722C;&#x58C1;&#x7684;&#x6BCF;&#x4E00;&#x6B65;&#x7684;&#x843D;&#x811A;&#x70B9;&#x4F4D;&#x7F6E;[N : x*y*z, unit: m] <br></p>
+<h3 id="output">Output</h3>
+<p><code>surface_step_index[N-2][3]</code> -&gt; &#x6BCF;&#x6B21;&#x5355;&#x6B65;&#x8FD0;&#x52A8;&#x7684;&#x4E09;&#x4E2A;&#x70B9;(base, end, start)&#x6240;&#x5728;&#x7684;&#x58C1;&#x9762;[N-2: 3] <br>
+<code>surface_step[N-2][n][3]</code> -&gt; &#x8BB0;&#x5F55;&#x4E0B;&#x8FD9;&#x4E2A;&#x6BCF;&#x6B21;&#x5355;&#x6B65;&#x8FD0;&#x52A8;&#x7684;&#x58C1;&#x9762;&#x5750;&#x6807;(base, end, start)[N-2: n*3] <br></p>
+<h3 id="process">process</h3>
+<pre><code class="lang-cpp">for each moving:
+   for  each surfaces:
+       if  the base_point in the surface  then:
+              surface_step_index(1) &lt;- surface_idx 
+              surface_step(1) &lt;- surfaces{i}
+
+       if  the end_point in the surface  then:
+              surface_step_index(2) &lt;- surface_idx 
+              surface_step(2) &lt;- surfaces{i}
+
+       if  the start_point in the surface  then:
+              surface_step_index(3) &lt;- surface_idx 
+              surface_step(3) &lt;- surfaces{i}
+</code></pre>
+<h3 id="&#x5224;&#x65AD;&#x70B9;&#x662F;&#x5426;&#x5728;&#x58C1;&#x9762;&#x4E0A;"><a href="base_code.html##1&#x3001;&#x5224;&#x65AD;&#x70B9;&#x662F;&#x5426;&#x5728;&#x7A7A;&#x95F4;&#x591A;&#x8FB9;&#x5F62;&#x5185;&#x90E8;">&#x5224;&#x65AD;&#x70B9;&#x662F;&#x5426;&#x5728;&#x58C1;&#x9762;&#x4E0A;</a></h3>
+<h2 id="3&#x3001;&#x83B7;&#x5F97;&#x57FA;&#x5EA7;&#x5750;&#x6807;&#x7CFB;&#x548C;&#x8D77;&#x70B9;&#x5750;&#x6807;&#x7CFB;">3&#x3001;&#x83B7;&#x5F97;&#x57FA;&#x5EA7;&#x5750;&#x6807;&#x7CFB;&#x548C;&#x8D77;&#x70B9;&#x5750;&#x6807;&#x7CFB;</h2>
+<h3 id="input">Input</h3>
+<p><code>base_surface[N][3]</code> -&gt; &#x57FA;&#x5EA7;&#x5750;&#x6807;&#x58C1;&#x9762;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x524D;&#x9762;&#x7684;<code>surface_step{1}</code> [n*3] <br>
+<code>step_option[N]</code>  -&gt;  &#x722C;&#x58C1;&#x6BCF;&#x4E00;&#x6B65;&#x7684;&#x60C5;&#x51B5;(0&#x8868;&#x793A;&#x58C1;&#x9762;&#x5185;&#x90E8;&#xFF0C;1&#x8868;&#x793A;&#x8DE8;&#x58C1;&#x9762;)[N : 1/0]<br>
+<code>first_joint</code> -&gt; &#x673A;&#x5668;&#x4EBA;&#x7684;&#x8D77;&#x59CB;&#x5173;&#x8282;[0  20  -40  20 0] <br></p>
+<h3 id="output">Output</h3>
+<p><code>base_normal_vector[N][3]</code> &lt;- N&#x4E2A;&#x57FA;&#x5EA7;&#x58C1;&#x9762;&#x7684;&#x6CD5;&#x5411;&#x91CF; [N: 3]<br>
+<code>base_coordinate_system[N][3][3]</code> &lt;- &#x57FA;&#x5750;&#x6807;&#x7CFB; [N: 3*3, Rx-Ry-Rz]<br>
+<code>start_coordinate_system_to_base[N][3][3]</code> &lt;- &#x8D77;&#x59CB;&#x5750;&#x6807;&#x7CFB;&#x5728;&#x57FA;&#x5EA7;&#x6807;&#x7CFB;&#x4E0B;&#x7684;&#x8868;&#x793A; [N: 3*3, Rx-Ry-Rz] <br></p>
+<h3 id="process">process</h3>
+<pre><code class="lang-cpp">
+for each moving:
+       base_normal_vector &lt;- norm( cross(base_surface_vector1, base_surface_vector2) )
+       base_x &lt;- base_surface_vector1
+       base_z &lt;- base_normal_vector
+       base_y &lt;- cross(base_x, base_z)
+       base_coordinate_system &lt;- [base_x&apos;, base_y&apos;, base_z&apos;]
+
+       //&#x5148;&#x6C42;&#x51FA;&#x8D77;&#x59CB;&#x58C1;&#x9762;&#x7684;&#x59FF;&#x6001;&#xFF0C;&#x8F6C;&#x6362;&#x5230;&#x57FA;&#x5EA7;&#x5750;&#x6807;&#x7CFB;&#x4E0B;&#xFF0C;&#x7136;&#x540E;&#x5C06;y&#x3001;z&#x8F74;&#x65B9;&#x5411;&#x53D6;&#x53CD;&apos;
+       if stepOption == 1 then :  
+              // &#x58C1;&#x9762;&#x5185;&#xFF0C;&#x5219;&#x8D77;&#x59CB;&#x5750;&#x6807;&#x7CFB;&#x5C31;&#x662F;&#x57FA;&#x5EA7;&#x6807;&#x7CFB;&#x7684;y,z&#x8F74;&#x53D6;&#x53CD;
+              start_coordinate_system_to_base &lt;- eye(3)
+              start_coordinate_system_to_base(1:3,2) &lt;- base_coordinate_system(1:3,2)*-1
+              start_coordinate_system_to_base(1:3,3) &lt;- base_coordinate_system(1:3,3)*-1
+
+       if stepOption == 2 then :
+              // &#x58C1;&#x9762;&#x95F4;&#xFF0C;&#x8BA1;&#x7B97;&#x8D77;&#x59CB;&#x58C1;&#x9762;&#x7684;&#x5750;&#x6807;&#x7CFB;&#xFF0C;&#x518D;&#x8F6C;&#x6362;&#x5230;&#x57FA;&#x5EA7;&#x6807;&#x7CFB;&#x4E0B;
+              start_z &lt;- norm( cross(start_surface_vector1 , start_surface_vector2) )
+              start_x &lt;- start_surface_vector1
+              start_y &lt;- cross(start_x, start_z)
+              start_coordinate_system &lt;- [start_x&apos;, start_y&apos;, start_z&apos;]
+
+              start_coordinate_system_to_base &lt;- (base_coordinate_system&apos;) * start_coordinate_system
+              start_coordinate_system_to_base(1:3, 2) &lt;- start_coordinate_system_to_base(1:3, 2)*(-1)
+              start_coordinate_system_to_base(1:3, 3) &lt;- start_coordinate_system_to_base(1:3, 3)*(-1)
+</code></pre>
+<h2 id="4&#x3001;&#x969C;&#x788D;&#x7269;&#x6570;&#x636E;&#x5904;&#x7406;">4&#x3001;&#x969C;&#x788D;&#x7269;&#x6570;&#x636E;&#x5904;&#x7406;</h2>
+<h3 id="input">Input</h3>
+<p><code>obstacle_border[N][n][4][2]</code> &lt;- n&#x4E2A;&#x969C;&#x788D;&#x7269;&#x5728;N&#x4E2A;&#x58C1;&#x9762;&#x4E0A;&#x7684;4&#x4E2A;&#x5750;&#x6807;&#x70B9;[N: (n*4*2] <br>
+<code>obstacle_height[N][n]</code> &lt;- n&#x4E2A;&#x969C;&#x788D;&#x7269;&#x5728;N&#x4E2A;&#x58C1;&#x9762;&#x4E0A;&#x7684;&#x9AD8;&#x5EA6;[N: n*1] <br>
+<code>base_normal_vector[N][3]</code> &lt;- N&#x4E2A;&#x57FA;&#x5EA7;&#x58C1;&#x9762;&#x7684;&#x6CD5;&#x5411;&#x91CF; [N: 3]<br></p>
+<h3 id="output">Output</h3>
+<p><code>ranging_point</code> &lt;- &#x673A;&#x5668;&#x4EBA;&#x4E0E;&#x969C;&#x788D;&#x7269;&#x4E4B;&#x95F4;&#x7684;&#x6D4B;&#x8DDD;&#x70B9;
+``</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="base_code.html" class="navigation navigation-next " aria-label="Next page: Part II base Code">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Part I Fake Code","level":"1.2","depth":1,"next":{"title":"Part II base Code","level":"1.3","depth":1,"path":"base_code.md","ref":"base_code.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"fake_code.md","mtime":"2020-12-10T14:53:00.669Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-13T13:31:58.411Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
