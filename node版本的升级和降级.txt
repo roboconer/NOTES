@@ -1,0 +1,5 @@
+node版本管理 （node版本的升级和降级） 切换 node 版本：
+		https://www.cnblogs.com/yaogengzhu/p/11474505.html
+
+Windows 下安装 nvm 管理 nodejs 版本：
+https://segmentfault.com/a/1190000007612011
